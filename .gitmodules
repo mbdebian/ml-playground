@@ -1,0 +1,4 @@
+[submodule "real_world_machine_learning/book_code"]
+	path = real_world_machine_learning/book_code
+	url = https://github.com/brinkar/real-world-machine-learning.git
+	branch = master
