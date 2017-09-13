@@ -8,5 +8,5 @@
 # 
 
 """
-Document your module here
+This is a script for quick and dirty tests on machine learning concepts
 """
