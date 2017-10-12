@@ -38,4 +38,7 @@ cabin_data = np.array(["C65", "", "E36", "C54", "B57 B59 B63 B66"])
 
 
 def feature_engineering_cabin_features(data):
-    pass
+    features = []
+    for cabin in data:
+        cabins = cabin.split(" ")
+        n_cabins = len(cabins)
