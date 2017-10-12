@@ -100,3 +100,5 @@ ENV/
 # mypy
 .mypy_cache/
 
+# Ignore Python virtual environment
+python
