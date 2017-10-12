@@ -42,3 +42,21 @@ def feature_engineering_cabin_features(data):
     for cabin in data:
         cabins = cabin.split(" ")
         n_cabins = len(cabins)
+        try:
+            cabin_char = cabins[0][0]
+        except IndexError:
+            cabin_char = "X"
+            n_cabins = 0
+        # The rest is the cabin number
+        try:
+            cabin_num = int(cabins[0][1:])
+        except:
+            cabin_num = -1
+        # Add 3 features for each passenger
+        features.append([cabin_char, cabin_num, n_cabins])
+    return features
+
+
+print("---> Feature Engineering of '{}' into\n\t-> {}"
+      .format(cabin_data,
+              ",".join(feature_engineering_cabin_features(cabin_data))))
