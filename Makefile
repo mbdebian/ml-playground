@@ -13,7 +13,10 @@ $(PYTHON_HOME):
 
 install: install_requirements
 
+clean:
+	@rm -rf $(PYTHON_HOME)
+
 update_requirements_file:
 	@$(PYTHON_HOME)/bin/pipreqs --use-local --savepath $(REQUIREMENTS_FILE) $(PWD)
 
-.PHONY: install install_requirements update_requirements_file
+.PHONY: install install_requirements update_requirements_file clean
