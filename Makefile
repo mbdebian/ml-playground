@@ -7,7 +7,7 @@ install_requirements: python_install
 	@$(PYTHON_HOME)/bin/pip install pipreqs nose
 	@$(PYTHON_HOME)/bin/pip install -r $(REQUIREMENTS_FILE)
 
-python_install:
+$(PYTHON_HOME):
 	@pip install --upgrade --user virtualenv
 	@virtualenv -p `which python3` $(PYTHON_HOME)
 
