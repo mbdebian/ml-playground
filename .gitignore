@@ -102,3 +102,6 @@ ENV/
 
 # Ignore Python virtual environment
 python
+
+# Ignore PyCharm IDE data
+.idea
