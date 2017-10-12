@@ -32,3 +32,6 @@ print("----> Categorical data: {}\n\tCategories: {}\n\tNumerical conversion: {}"
       .format(cat_data,
               ",".join(np.unique(cat_data)),
               category_to_numerical(cat_data)))
+
+# Simple feature engineering of the Titanic data
+cabin_data = np.array(["C65", "", "E36", "C54", "B57 B59 B63 B66"])
