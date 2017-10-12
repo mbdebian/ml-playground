@@ -3,7 +3,7 @@ OS := $(shell uname -s)
 PYTHON_HOME := 'python'
 REQUIREMENTS_FILE := 'requirements.txt'
 
-install_requirements: python_install
+install_requirements: $(PYTHON_HOME)
 	@$(PYTHON_HOME)/bin/pip install pipreqs nose
 	@$(PYTHON_HOME)/bin/pip install -r $(REQUIREMENTS_FILE)
 
