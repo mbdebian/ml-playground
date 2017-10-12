@@ -27,3 +27,8 @@ def category_to_numerical(data):
         features.append(binary.astype(int))
     return features
 
+
+print("----> Categorical data: {}\n\tCategories: {}\n\tNumerical conversion: {}"
+      .format(cat_data,
+              ",".join(unique(cat_data)),
+              category_to_numerical(cat_data)))
