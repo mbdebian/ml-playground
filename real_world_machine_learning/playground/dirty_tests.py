@@ -24,7 +24,7 @@ def category_to_numerical(data):
     features = []
     for category in categories:
         binary = (data == category)
-        features.append(binary.astype(int))
+        features.append(binary.astype("int"))
     return features
 
 
