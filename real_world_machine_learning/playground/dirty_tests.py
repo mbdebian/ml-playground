@@ -60,3 +60,6 @@ def feature_engineering_cabin_features(data):
 print("---> Feature Engineering of '{}' into\n\t-> {}"
       .format(cabin_data,
               feature_engineering_cabin_features(cabin_data)))
+
+
+# Feature normalization
