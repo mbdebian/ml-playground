@@ -13,3 +13,6 @@ This is a script for quick and dirty tests on machine learning concepts
 (Working with code from Chapter 2 in the book)
 """
 
+# Converting categorical data to numerical features
+cat_data = ['male', 'female', 'male', 'male', 'female', 'male', 'female', 'female']
+
