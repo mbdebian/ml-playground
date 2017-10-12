@@ -13,6 +13,17 @@ This is a script for quick and dirty tests on machine learning concepts
 (Working with code from Chapter 2 in the book)
 """
 
+from numpy import unique
+
 # Converting categorical data to numerical features
 cat_data = ['male', 'female', 'male', 'male', 'female', 'male', 'female', 'female']
+
+
+def category_to_numerical(data):
+    categories = unique(data)
+    features = []
+    for category in categories:
+        binary = (data == category)
+        features.append(binary.astype(int))
+    return features
 
