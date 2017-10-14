@@ -61,7 +61,6 @@ print("---> Feature Engineering of '{}' into\n\t-> {}"
       .format(cabin_data,
               feature_engineering_cabin_features(cabin_data)))
 
-
 # Feature normalization
 num_data = np.array([1, 10, 0.5, 43, 0.12, 8])
 
