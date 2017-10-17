@@ -66,4 +66,7 @@ num_data = np.array([1, 10, 0.5, 43, 0.12, 8])
 
 
 def normalize_feature(data, f_min=-1, f_max=1):
-    pass
+    data_min, data_max = min(data), max(data)
+    factor = (f_max - f_min) / (data_max - data_min)
+    normalized = f_min + data * factor
+    return normalized, factor
