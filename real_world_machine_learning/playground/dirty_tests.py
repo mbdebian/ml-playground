@@ -70,3 +70,8 @@ def normalize_feature(data, f_min=-1, f_max=1):
     factor = (f_max - f_min) / (data_max - data_min)
     normalized = f_min + data * factor
     return normalized, factor
+
+
+print("---> Normalize Data\nSource: '[{}]'\nNormalized'[{}]"
+      .format(",".join(num_data),
+              ",".join(normalize_feature(num_data))))
