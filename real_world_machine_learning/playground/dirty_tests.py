@@ -72,6 +72,6 @@ def normalize_feature(data, f_min=-1, f_max=1):
     return normalized, factor
 
 
-print("---> Normalize Data\nSource: '[{}]'\nNormalized'[{}]"
-      .format(",".join(num_data),
-              ",".join(normalize_feature(num_data))))
+print("---> Normalize Data\nSource: '{}'\nNormalized'{}'"
+      .format(num_data,
+              normalize_feature(num_data)))
