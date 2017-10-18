@@ -10,3 +10,5 @@
 """
 Scratchpad for the chapter 3 from the book
 """
+
+import pandas
