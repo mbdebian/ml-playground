@@ -8,5 +8,5 @@
 # 
 
 """
-Document your module here
+Scratchpad for the chapter 3 from the book
 """
