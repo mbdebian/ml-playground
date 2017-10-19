@@ -12,8 +12,18 @@ Scratchpad for the chapter 3 from the book
 """
 
 import pandas
+import numpy as np
+
 
 # Helper functions
+# Categorical-to-numerical function from chapter 2 changed to automatically add column names
+def cat_to_num(data):
+    categories = np.unique(data)
+    features = {}
+    for cat in categories:
+        binary = (data == cat)
+        features["{}={}".format(data.name, cat)] = binary.astype("int")
+    return pandas.DataFrame(features)
 
 
 # Read the Titanic sample data
@@ -26,4 +36,3 @@ print("... Sample ...\n"
 # We make a 80/20% train/test split of the data
 data_train = sample_data_titanic[:int(0.8 * len(sample_data_titanic))]
 data_test = sample_data_titanic[int(0.8 * len(sample_data_titanic))]
-
