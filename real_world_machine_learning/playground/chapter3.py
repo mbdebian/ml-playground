@@ -13,6 +13,7 @@ Scratchpad for the chapter 3 from the book
 
 import pandas
 import numpy as np
+import math
 
 
 # Helper functions
@@ -37,6 +38,10 @@ def prepare_data(data):
 
     # Setting missing age values to -1
     features["Age"] = data["Age"].fillna(-1)
+
+    # Adding the sqrt of the fare feature
+    features["sqrt_Fare"] = math.sqrt(data["Fare"])
+    
 
 
 # Read the Titanic sample data
