@@ -32,7 +32,8 @@ def prepare_data(data):
     :param data: dataframe of raw data
     :return: ML model features
     """
-    pass
+    # Initially, we build a model only no the available numerical values
+    features = data.drop(["PassengerId", "Survived", "Fare", "Name", "Sex", "Ticket", "Cabin", "Embarked"], axis=1)
 
 
 # Read the Titanic sample data
