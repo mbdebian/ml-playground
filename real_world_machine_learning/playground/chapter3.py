@@ -22,7 +22,7 @@ def cat_to_num(data):
     features = {}
     for cat in categories:
         binary = (data == cat)
-        features["{}={}".format(data.name, cat)] = binary.astype("int")
+        features["{}_{}".format(data.name, cat)] = binary.astype("int")
     return pandas.DataFrame(features)
 
 
