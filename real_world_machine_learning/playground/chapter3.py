@@ -19,3 +19,8 @@ print("---> Sample data - Titanic, #{} entries".format(len(sample_data_titanic))
 print("... Sample ...\n"
       "{}\n"
       "... END of Sample ...".format(sample_data_titanic[:5]))
+
+# We make a 80/20% train/test split of the data
+data_train = sample_data_titanic[:int(0.8 * len(sample_data_titanic))]
+data_test = sample_data_titanic[int(0.8 * len(sample_data_titanic))]
+
