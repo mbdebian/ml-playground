@@ -35,6 +35,9 @@ def prepare_data(data):
     # Initially, we build a model only no the available numerical values
     features = data.drop(["PassengerId", "Survived", "Fare", "Name", "Sex", "Ticket", "Cabin", "Embarked"], axis=1)
 
+    # Setting missing age values to -1
+    features["Age"] = data["Age"].fillna(-1)
+
 
 # Read the Titanic sample data
 sample_data_titanic = pandas.read_csv("../book_code/data/titanic.csv")
