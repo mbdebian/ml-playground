@@ -57,3 +57,10 @@ print("... Sample ...\n"
 # We make a 80/20% train/test split of the data
 data_train = sample_data_titanic[:int(0.8 * len(sample_data_titanic))]
 data_test = sample_data_titanic[int(0.8 * len(sample_data_titanic))]
+
+# ML training model
+ml_training_model = prepare_data(data_train)
+print("---> ML Training model\n"
+      "... SAMPLE ...\n"
+      "{}\n"
+      "... END of SAMPLE".format(ml_training_model[:5]))
