@@ -41,6 +41,8 @@ def prepare_data(data):
     features["sqrt_Fare"] = math.sqrt(data["Fare"])
     # Adding gender categorical value
     features = features.join(cat_to_num(data["Sex"]))
+    # Adding Embarked categorical value
+    features = features.join(cat_to_num(data["Embarked"]))
 
 
 # Read the Titanic sample data
