@@ -16,4 +16,6 @@ import pandas
 # Read the Titanic sample data
 sample_data_titanic = pandas.read_csv("../book_code/data/titanic.csv")
 print("---> Sample data - Titanic, #{} entries".format(len(sample_data_titanic)))
-s
+print("... Sample ...\n"
+      "{}\n"
+      "... END of Sample ...".format(sample_data_titanic[:5]))
