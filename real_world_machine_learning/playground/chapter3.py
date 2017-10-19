@@ -35,13 +35,12 @@ def prepare_data(data):
     """
     # Initially, we build a model only no the available numerical values
     features = data.drop(["PassengerId", "Survived", "Fare", "Name", "Sex", "Ticket", "Cabin", "Embarked"], axis=1)
-
     # Setting missing age values to -1
     features["Age"] = data["Age"].fillna(-1)
-
     # Adding the sqrt of the fare feature
     features["sqrt_Fare"] = math.sqrt(data["Fare"])
-    
+    # Adding gender categorical value
+    features = features.join(cat_to_num(data["Sex"]))
 
 
 # Read the Titanic sample data
