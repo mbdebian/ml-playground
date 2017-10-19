@@ -43,6 +43,8 @@ def prepare_data(data):
     features = features.join(cat_to_num(data["Sex"]))
     # Adding Embarked categorical value
     features = features.join(cat_to_num(data["Embarked"]))
+    # ML model features are now ready
+    return features
 
 
 # Read the Titanic sample data
