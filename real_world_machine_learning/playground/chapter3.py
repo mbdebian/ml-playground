@@ -26,6 +26,15 @@ def cat_to_num(data):
     return pandas.DataFrame(features)
 
 
+def prepare_data(data):
+    """
+    Takes a dataframe of raw data and returns ML model features
+    :param data: dataframe of raw data
+    :return: ML model features
+    """
+    pass
+
+
 # Read the Titanic sample data
 sample_data_titanic = pandas.read_csv("../book_code/data/titanic.csv")
 print("---> Sample data - Titanic, #{} entries".format(len(sample_data_titanic)))
