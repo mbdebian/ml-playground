@@ -14,6 +14,7 @@ Scratchpad for the chapter 3 from the book
 import pandas
 import numpy as np
 import math
+from sklearn.linear_model import LogisticRegression
 
 
 # Helper functions
