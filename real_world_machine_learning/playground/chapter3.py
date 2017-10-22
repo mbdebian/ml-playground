@@ -35,7 +35,9 @@ def prepare_data(data):
     :return: ML model features
     """
     # Initially, we build a model only no the available numerical values
-    features = data.drop(["PassengerId", "Survived", "Fare", "Name", "Sex", "Ticket", "Cabin", "Embarked"], axis=1)
+    features_drop_list = ["PassengerId", "Survived", "Fare", "Name", "Sex", "Ticket", "Cabin", "Embarked"]
+    print("+++> Drop features: {}".format(features_drop_list))
+    features = data.drop(features_drop_list, axis=1)
     # Setting missing age values to -1
     features["Age"] = data["Age"].fillna(-1)
     # Adding the sqrt of the fare feature
