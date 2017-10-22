@@ -13,7 +13,6 @@ Scratchpad for the chapter 3 from the book
 
 import pandas
 import numpy as np
-import math
 from sklearn.linear_model import LogisticRegression
 
 
@@ -43,7 +42,7 @@ def prepare_data(data):
     features["Age"] = data["Age"].fillna(-1)
     # Adding the sqrt of the fare feature
     print("+++> Change 'Fare' for its square root value")
-    features["sqrt_Fare"] = math.sqrt(data["Fare"])
+    features["sqrt_Fare"] = np.sqrt(data["Fare"])
     # Adding gender categorical value
     print("+++> Convert 'Sex' categorical data")
     features = features.join(cat_to_num(data["Sex"]))
