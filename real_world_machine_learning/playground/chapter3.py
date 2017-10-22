@@ -57,6 +57,9 @@ def prepare_data(data):
 # The data is English localized, but pandas will fail trying to convert numbers into float because this system is
 # Spanish localized
 sample_data_titanic = pandas.read_csv("../book_code/data/titanic.csv")
+# Data fix (for numpy 'unique') - We know there is missing 'Embark' data that, when run through 'unique', is interpreted
+# as 'float', but 'Embark' is 'str', so we're gonna change that
+sample_data_titanic.Embark.fillna("")
 print("---> Sample data - Titanic, #{} entries".format(len(sample_data_titanic)))
 print("... Sample ...\n"
       "{}\n"
