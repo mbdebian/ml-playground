@@ -63,7 +63,7 @@ print("... Sample ...\n"
       "... END of Sample ...".format(sample_data_titanic[:5]))
 # Data fix (for numpy 'unique') - We know there is missing 'Embark' data that, when run through 'unique', is interpreted
 # as 'float', but 'Embark' is 'str', so we're gonna change that
-sample_data_titanic['Embark'] = sample_data_titanic['Embark'].fillna("missing", inplace=True)
+sample_data_titanic['Embarked'] = sample_data_titanic['Embarked'].fillna("missing", inplace=True)
 
 # We make a 80/20% train/test split of the data
 data_train = sample_data_titanic[:int(0.8 * len(sample_data_titanic))]
