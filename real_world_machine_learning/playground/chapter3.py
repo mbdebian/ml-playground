@@ -39,6 +39,7 @@ def prepare_data(data):
     print("+++> Drop features: {}".format(features_drop_list))
     features = data.drop(features_drop_list, axis=1)
     # Setting missing age values to -1
+    print("+++> Fix missing 'Age' values, filling them with '-1'")
     features["Age"] = data["Age"].fillna(-1)
     # Adding the sqrt of the fare feature
     features["sqrt_Fare"] = math.sqrt(data["Fare"])
