@@ -79,5 +79,6 @@ model = LogisticRegression()
 model.fit(ml_training_model, data_train['Survived'])
 
 # Make predictions
-model.predict(prepare_data(data_test))
+model_predictions_on_test_data = model.predict(prepare_data(data_test))
+print("---> Model predictions on test data:\n{}".format(model_predictions_on_test_data))
 
