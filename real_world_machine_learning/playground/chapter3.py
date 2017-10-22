@@ -77,3 +77,7 @@ print("---> ML Training model\n"
       "... END of SAMPLE".format(ml_training_model[:5]))
 model = LogisticRegression()
 model.fit(ml_training_model, data_train['Survived'])
+
+# Make predictions
+model.predict(prepare_data(data_test))
+
