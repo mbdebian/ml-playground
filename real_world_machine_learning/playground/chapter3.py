@@ -84,4 +84,5 @@ print("---> Model predictions on test data:\n{}".format(model_predictions_on_tes
 
 # Compute the accuracy of the model on the test data
 model_score_on_test_data = model.score(prepare_data(data_test), data_test['Survived'])
+print("---> Model Accuracy on test data:\n{}".format(model_score_on_test_data))
 
