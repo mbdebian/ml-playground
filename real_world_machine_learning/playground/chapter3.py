@@ -65,3 +65,4 @@ print("---> ML Training model\n"
       "... SAMPLE ...\n"
       "{}\n"
       "... END of SAMPLE".format(ml_training_model[:5]))
+model = LogisticRegression()
