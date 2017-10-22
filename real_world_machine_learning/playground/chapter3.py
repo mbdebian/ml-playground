@@ -59,7 +59,7 @@ def prepare_data(data):
 sample_data_titanic = pandas.read_csv("../book_code/data/titanic.csv")
 # Data fix (for numpy 'unique') - We know there is missing 'Embark' data that, when run through 'unique', is interpreted
 # as 'float', but 'Embark' is 'str', so we're gonna change that
-sample_data_titanic['Embark'].fillna("", inplace=True)
+sample_data_titanic.fillna("", inplace=True)
 print("---> Sample data - Titanic, #{} entries".format(len(sample_data_titanic)))
 print("... Sample ...\n"
       "{}\n"
