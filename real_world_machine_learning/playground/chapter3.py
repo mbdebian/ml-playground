@@ -42,6 +42,7 @@ def prepare_data(data):
     print("+++> Fix missing 'Age' values, filling them with '-1'")
     features["Age"] = data["Age"].fillna(-1)
     # Adding the sqrt of the fare feature
+    print("+++> Change 'Fare' for its square root value")
     features["sqrt_Fare"] = math.sqrt(data["Fare"])
     # Adding gender categorical value
     features = features.join(cat_to_num(data["Sex"]))
