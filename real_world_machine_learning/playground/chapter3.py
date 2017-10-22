@@ -55,10 +55,9 @@ def prepare_data(data):
 
 
 # Read the Titanic sample data
-sample_data_titanic = pandas.read_csv("../book_code/data/titanic.csv")
 # The data is English localized, but pandas will fail trying to convert numbers into float because this system is
 # Spanish localized
-sample_data_titanic['Fare'] = sample_data_titanic['Fare'].replace('.', ',')
+sample_data_titanic = pandas.read_csv("../book_code/data/titanic.csv", decimal='.')
 print("---> Sample data - Titanic, #{} entries".format(len(sample_data_titanic)))
 print("... Sample ...\n"
       "{}\n"
