@@ -14,6 +14,7 @@ Scratchpad for the chapter 3 from the book
 import pandas
 import numpy as np
 from sklearn.linear_model import LogisticRegression
+from sklearn.svm import SVC
 
 
 # Helper functions
@@ -80,9 +81,16 @@ model.fit(ml_training_model, data_train['Survived'])
 
 # Make predictions
 model_predictions_on_test_data = model.predict(prepare_data(data_test))
+print("[--- Logistic Regression ---]")
 print("---> Model predictions on test data:\n{}".format(model_predictions_on_test_data))
 
 # Compute the accuracy of the model on the test data
 model_score_on_test_data = model.score(prepare_data(data_test), data_test['Survived'])
 print("---> Model Accuracy on test data:\n{}".format(model_score_on_test_data))
 
+# Non-linear model with Support Vector Machines
+print("[--- SVC ---]")
+model_svc = SVC()
+model_svc.fit(ml_training_model, data_train['Survived'])
+model_svc_score_on_test_data = model_svc.score(prepare_data(data_test), data_test['Survived'])
+print("---> Model Accuracy on test data:\n{}".format(model_svc_score_on_test_data))
