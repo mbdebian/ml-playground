@@ -82,3 +82,6 @@ model.fit(ml_training_model, data_train['Survived'])
 model_predictions_on_test_data = model.predict(prepare_data(data_test))
 print("---> Model predictions on test data:\n{}".format(model_predictions_on_test_data))
 
+# Compute the accuracy of the model on the test data
+model_score_on_test_data = model.score(prepare_data(data_test), data_test['Survived'])
+
