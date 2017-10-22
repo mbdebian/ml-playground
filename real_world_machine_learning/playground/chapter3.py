@@ -45,6 +45,7 @@ def prepare_data(data):
     print("+++> Change 'Fare' for its square root value")
     features["sqrt_Fare"] = math.sqrt(data["Fare"])
     # Adding gender categorical value
+    print("+++> Convert 'Sex' categorical value")
     features = features.join(cat_to_num(data["Sex"]))
     # Adding Embarked categorical value
     features = features.join(cat_to_num(data["Embarked"]))
