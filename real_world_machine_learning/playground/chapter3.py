@@ -94,3 +94,5 @@ model_svc = SVC()
 model_svc.fit(ml_training_model, data_train['Survived'])
 model_svc_score_on_test_data = model_svc.score(prepare_data(data_test), data_test['Survived'])
 print("---> Model Accuracy on test data:\n{}".format(model_svc_score_on_test_data))
+
+# Classification with multiple classes: hand-written digits
