@@ -13,7 +13,7 @@ Scratchpad for the chapter 3 from the book
 
 import pandas
 import numpy as np
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import LogisticRegression, LinearRegression
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
 
@@ -134,3 +134,5 @@ print("---> Auto MPG Dataset contains #{} entries, #{} for training and #{} for 
               len(auto_train),
               len(auto_test)))
 print("---> Auto MPG Dataset Sample\n{}".format(auto[:20]))
+linear_regression = LinearRegression()
+linear_regression.fit(auto_train.drop('mpg', axis=1), auto_train['mpg'])
