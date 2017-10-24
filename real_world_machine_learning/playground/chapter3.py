@@ -94,13 +94,14 @@ model_svc_score_on_test_data = model_svc.score(prepare_data(data_test), data_tes
 print("---> Model Accuracy on test data:\n{}".format(model_svc_score_on_test_data))
 
 # ---> Classification with multiple classes: hand-written digits <---
+print("[--- MNIST Small Dataset (KNN Classifier) ---]")
 mnist_dataset = pandas.read_csv("../book_code/data/mnist_small.csv")
 mnist_train = mnist_dataset[:int(0.8 * len(mnist_dataset))]
-mnist_test = mnist_dataset[int(0.8 * len(mnist_dataset))]
+mnist_test = mnist_dataset[int(0.8 * len(mnist_dataset)):]
 # Instantiate the classifier
-knn = KNeighborsClassifier(n_neighbors=10)
+#knn = KNeighborsClassifier(n_neighbors=10)
 # Train the classifier by dropping the 'label' column (which is the classification target)
-knn.fit(mnist_train.drop('label', axis=1), mnist_train['label'])
+#knn.fit(mnist_train.drop('label', axis=1), mnist_train['label'])
 # Predictions
-knn_mnist_predictions = knn.predict(mnist_test.drop('label', axis=1))
-print("KNN ---> {}".format(knn_mnist_predictions))
+#knn_mnist_predictions = knn.predict(mnist_test.drop('label', axis=1))
+#print("KNN ---> {}".format(knn_mnist_predictions))
