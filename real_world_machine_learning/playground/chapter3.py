@@ -123,3 +123,6 @@ print("---> Classifier Score on the test data, {}"
 # ---> Predicting numerical values with a regression model <---
 print("[--- Auto MPG Dataset (Linear Regression) ---]")
 auto_dataset = pandas.read_csv("../book_code/data/auto-mpg.csv")
+# Convert origin from categorical to numerical
+auto = auto_dataset.join(cat_to_num(auto_dataset['origin']))
+
