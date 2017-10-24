@@ -119,3 +119,5 @@ print("---> Classifier Predictions for test data\n{}".format(knn_mnist_predictio
 # Compute the KNN Classifier score
 print("---> Classifier Score on the test data, {}"
       .format(knn.score(mnist_test.drop('label', axis=1), mnist_test['label'])))
+
+# ---> Predicting numerical values with a regression model <---
