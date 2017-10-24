@@ -98,6 +98,10 @@ print("[--- MNIST Small Dataset (KNN Classifier) ---]")
 mnist_dataset = pandas.read_csv("../book_code/data/mnist_small.csv")
 mnist_train = mnist_dataset[:int(0.8 * len(mnist_dataset))]
 mnist_test = mnist_dataset[int(0.8 * len(mnist_dataset)):]
+print("---> MNIST dataset contains #{} entries, #{} for training and #{} for testing"
+      .format(len(mnist_dataset),
+              len(mnist_train),
+              len(mnist_test)))
 # Instantiate the classifier
 knn = KNeighborsClassifier(n_neighbors=10)
 # Train the classifier by dropping the 'label' column (which is the classification target)
