@@ -14,9 +14,10 @@ Scratchpad for the chapter 3 from the book
 import pandas
 import numpy as np
 import pylab
-from sklearn.linear_model import LogisticRegression, LinearRegression
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LogisticRegression, LinearRegression
 
 
 # Helper functions
@@ -149,3 +150,7 @@ pylab.plot(auto_test.mpg, linear_regression_predictions, 'o')
 x = pylab.linspace(10, 40, 5)
 pylab.plot(x, x, '-')
 pylab.show()
+# Now with Random Forest
+print("[--- Auto MPG Dataset (Random Forest Regression) ---]")
+
+
