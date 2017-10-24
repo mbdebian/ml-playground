@@ -140,3 +140,4 @@ linear_regression.fit(auto_train.drop('mpg', axis=1), auto_train['mpg'])
 # Predictions from the linear regressor
 print("+++> Compute predictions with the linear regressor")
 linear_regression_predictions = linear_regression.predict(auto_test.drop('mpg', axis=1))
+print("---> Linear regressor predictions sample\n{}".format(linear_regression_predictions[:10]))
