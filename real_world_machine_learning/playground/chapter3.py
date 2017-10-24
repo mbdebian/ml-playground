@@ -142,6 +142,7 @@ linear_regression.fit(auto_train.drop('mpg', axis=1), auto_train['mpg'])
 print("+++> Compute predictions with the linear regressor")
 linear_regression_predictions = linear_regression.predict(auto_test.drop('mpg', axis=1))
 print("---> Linear regressor predictions sample\n{}".format(linear_regression_predictions[:10]))
+print("---> Min MPG (test dataset) {}, Max MPG (test dataset) {}".format(np.min(auto_test.mpg), np.max(auto_test.mpg)))
 # Plotting the prediction from the linear regressor
 # pylab.waitforbuttonpress = True
 pylab.plot(auto_test.mpg, linear_regression_predictions, 'o')
