@@ -148,7 +148,6 @@ print("---> Min MPG (test dataset) {}, Max MPG (test dataset) {}".format(np.min(
 pylab.plot(auto_test.mpg, linear_regression_predictions, 'o')
 x = pylab.linspace(10, 40, 5)
 pylab.plot(x, x, '-')
-pylab.show()
 # Now with Random Forest
 print("[--- Auto MPG Dataset (Random Forest Regression) ---]")
 random_forest_regressor = RandomForestRegressor()
@@ -157,5 +156,8 @@ random_forest_regressor.fit(auto_train.drop('mpg', axis=1), auto_train['mpg'])
 print("+++> Compute predictions with the random forest regressor")
 random_forest_regressor_predictions = random_forest_regressor.predict(auto_test.drop('mpg', axis=1))
 print("---> Random Forest regressor predictions sample\n{}".format(random_forest_regressor_predictions[:10]))
+
+# Show all plots
+pylab.show()
 
 
