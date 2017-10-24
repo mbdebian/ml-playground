@@ -110,4 +110,4 @@ print("+++> Fit the classifier")
 knn.fit(mnist_train.drop('label', axis=1), mnist_train['label'])
 # Predictions
 knn_mnist_predictions = knn.predict(mnist_test.drop('label', axis=1))
-print("---> Classifier Predictions\n{}".format(knn_mnist_predictions))
+print("---> Classifier Predictions for test data\n{}".format(knn_mnist_predictions))
