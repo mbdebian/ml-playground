@@ -96,3 +96,4 @@ model_svc_score_on_test_data = model_svc.score(prepare_data(data_test), data_tes
 print("---> Model Accuracy on test data:\n{}".format(model_svc_score_on_test_data))
 
 # Classification with multiple classes: hand-written digits
+mnist_dataset = pandas.read_csv("../book_code/data/mnist_small.csv")
