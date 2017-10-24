@@ -116,3 +116,6 @@ knn_mnist_predictions_with_probabilities = knn.predict_proba(mnist_test.drop('la
 knn_mnist_predictions_with_probabilities_sample = \
     pandas.DataFrame(knn_mnist_predictions_with_probabilities[:20], index=["Digit {}".format(i + 1) for i in range(20)])
 print("---> Classifier Predictions for test data\n{}".format(knn_mnist_predictions_with_probabilities_sample))
+# Compute the KNN Classifier score
+print("---> Classifier Score on the test data, {}"
+      .format(knn.score(mnist_test.drop('label', axis=1), mnist_test['label'])))
