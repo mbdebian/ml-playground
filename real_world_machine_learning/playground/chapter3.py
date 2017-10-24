@@ -152,5 +152,7 @@ pylab.plot(x, x, '-')
 pylab.show()
 # Now with Random Forest
 print("[--- Auto MPG Dataset (Random Forest Regression) ---]")
+random_forest_regressor = RandomForestRegressor()
+random_forest_regressor.fit(auto_train.drop('mpg', axis=1), auto_train['mpg'])
 
 
