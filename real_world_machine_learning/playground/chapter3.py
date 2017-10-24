@@ -135,4 +135,5 @@ print("---> Auto MPG Dataset contains #{} entries, #{} for training and #{} for 
               len(auto_test)))
 print("---> Auto MPG Dataset Sample\n{}".format(auto[:20]))
 linear_regression = LinearRegression()
+print("+++> Fit the linear regressor")
 linear_regression.fit(auto_train.drop('mpg', axis=1), auto_train['mpg'])
