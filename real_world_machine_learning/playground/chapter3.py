@@ -111,3 +111,8 @@ knn.fit(mnist_train.drop('label', axis=1), mnist_train['label'])
 # Predictions
 knn_mnist_predictions = knn.predict(mnist_test.drop('label', axis=1))
 print("---> Classifier Predictions for test data\n{}".format(knn_mnist_predictions))
+# Predictions with probabilities
+knn_mnist_predictions_with_probabilities = knn.predict_proba(mnist_test.drop('label', axis=1))
+knn_mnist_predictions_with_probabilities_sample = \
+    pandas.DataFrame(knn_mnist_predictions_with_probabilities[:5], index=["Digit {}".format(i + 1) for i in range(5)])
+print("---> Classifier Predictions for test data\n{}".format(knn_mnist_predictions_with_probabilities_sample))
