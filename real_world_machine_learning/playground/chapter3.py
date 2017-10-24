@@ -143,6 +143,8 @@ print("+++> Compute predictions with the linear regressor")
 linear_regression_predictions = linear_regression.predict(auto_test.drop('mpg', axis=1))
 print("---> Linear regressor predictions sample\n{}".format(linear_regression_predictions[:10]))
 # Plotting the prediction from the linear regressor
+# pylab.waitforbuttonpress = True
 pylab.plot(auto_test.mpg, linear_regression_predictions, 'o')
 x = pylab.linspace(10, 40, 5)
 pylab.plot(x, x, '-')
+pylab.show()
