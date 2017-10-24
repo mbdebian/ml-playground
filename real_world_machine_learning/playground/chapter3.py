@@ -125,4 +125,4 @@ print("[--- Auto MPG Dataset (Linear Regression) ---]")
 auto_dataset = pandas.read_csv("../book_code/data/auto-mpg.csv")
 # Convert origin from categorical to numerical
 auto = auto_dataset.join(cat_to_num(auto_dataset['origin']))
-
+auto = auto.drop('origin', axis=1)
