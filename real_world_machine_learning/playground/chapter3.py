@@ -155,6 +155,7 @@ print("[--- Auto MPG Dataset (Random Forest Regression) ---]")
 random_forest_regressor = RandomForestRegressor()
 print("+++> Fit the random forest regressor")
 random_forest_regressor.fit(auto_train.drop('mpg', axis=1), auto_train['mpg'])
+print("+++> Compute predictions with the random forest regressor")
 random_forest_regressor_predictions = random_forest_regressor.predict(auto_test.drop('mpg', axis=1))
 
 
