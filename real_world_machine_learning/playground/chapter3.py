@@ -101,3 +101,6 @@ mnist_test = mnist_dataset[int(0.8 * len(mnist_dataset))]
 knn = KNeighborsClassifier(n_neighbors=10)
 # Train the classifier by dropping the 'label' column (which is the classification target)
 knn.fit(mnist_train.drop('label', axis=1), mnist_train['label'])
+# Predictions
+knn_mnist_predictions = knn.predict(mnist_test.drop('label', axis=1))
+print("KNN ---> {}".format(knn_mnist_predictions))
