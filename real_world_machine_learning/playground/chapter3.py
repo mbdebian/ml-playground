@@ -13,6 +13,7 @@ Scratchpad for the chapter 3 from the book
 
 import pandas
 import numpy as np
+import pylab
 from sklearn.linear_model import LogisticRegression, LinearRegression
 from sklearn.svm import SVC
 from sklearn.neighbors import KNeighborsClassifier
@@ -141,3 +142,7 @@ linear_regression.fit(auto_train.drop('mpg', axis=1), auto_train['mpg'])
 print("+++> Compute predictions with the linear regressor")
 linear_regression_predictions = linear_regression.predict(auto_test.drop('mpg', axis=1))
 print("---> Linear regressor predictions sample\n{}".format(linear_regression_predictions[:10]))
+# Plotting the prediction from the linear regressor
+pylab.plot(auto_test.mpg, linear_regression_predictions, 'o')
+x = pylab.linspace(10, 40, 5)
+pylab.plot(x, x, '-')
