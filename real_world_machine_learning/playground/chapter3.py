@@ -121,4 +121,5 @@ print("---> Classifier Score on the test data, {}"
       .format(knn.score(mnist_test.drop('label', axis=1), mnist_test['label'])))
 
 # ---> Predicting numerical values with a regression model <---
+print("[--- Auto MPG Dataset (Linear Regression) ---]")
 auto_dataset = pandas.read_csv("../book_code/data/auto-mpg.csv")
