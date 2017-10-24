@@ -133,3 +133,4 @@ print("---> Auto MPG Dataset contains #{} entries, #{} for training and #{} for 
       .format(len(auto),
               len(auto_train),
               len(auto_test)))
+print("---> Auto MPG Dataset Sample\n{}".format(auto[:20]))
