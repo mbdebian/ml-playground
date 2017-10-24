@@ -106,7 +106,8 @@ print("---> MNIST dataset contains #{} entries, #{} for training and #{} for tes
 print("+++> Get an instance of the classifier, n_neighbors = 10")
 knn = KNeighborsClassifier(n_neighbors=10)
 # Train the classifier by dropping the 'label' column (which is the classification target)
-#knn.fit(mnist_train.drop('label', axis=1), mnist_train['label'])
+print("+++> Fit the classifier")
+knn.fit(mnist_train.drop('label', axis=1), mnist_train['label'])
 # Predictions
 #knn_mnist_predictions = knn.predict(mnist_test.drop('label', axis=1))
 #print("KNN ---> {}".format(knn_mnist_predictions))
