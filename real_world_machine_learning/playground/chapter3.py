@@ -126,3 +126,10 @@ auto_dataset = pandas.read_csv("../book_code/data/auto-mpg.csv")
 # Convert origin from categorical to numerical
 auto = auto_dataset.join(cat_to_num(auto_dataset['origin']))
 auto = auto.drop('origin', axis=1)
+# Split train / test
+auto_train = auto[:int(0.8 * len(auto))]
+auto_test = auto[int(0.8 * len(auto)):]
+print("---> Auto MPG Dataset contains #{} entries, #{} for training and #{} for testing"
+      .format(len(auto),
+              len(auto_train),
+              len(auto_test)))
