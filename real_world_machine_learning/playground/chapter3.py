@@ -97,3 +97,7 @@ print("---> Model Accuracy on test data:\n{}".format(model_svc_score_on_test_dat
 mnist_dataset = pandas.read_csv("../book_code/data/mnist_small.csv")
 mnist_train = mnist_dataset[:int(0.8 * len(mnist_dataset))]
 mnist_test = mnist_dataset[int(0.8 * len(mnist_dataset))]
+# Instantiate the classifier
+knn = KNeighborsClassifier(n_neighbors=10)
+# Train the classifier by dropping the 'label' column (which is the classification target)
+knn.fit(mnist_train.drop('label', axis=1), mnist_train['label'])
