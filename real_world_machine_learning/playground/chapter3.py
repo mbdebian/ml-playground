@@ -114,5 +114,5 @@ print("---> Classifier Predictions for test data\n{}".format(knn_mnist_predictio
 # Predictions with probabilities
 knn_mnist_predictions_with_probabilities = knn.predict_proba(mnist_test.drop('label', axis=1))
 knn_mnist_predictions_with_probabilities_sample = \
-    pandas.DataFrame(knn_mnist_predictions_with_probabilities[:20], index=["Digit {}".format(i + 1) for i in range(5)])
+    pandas.DataFrame(knn_mnist_predictions_with_probabilities[:20], index=["Digit {}".format(i + 1) for i in range(20)])
 print("---> Classifier Predictions for test data\n{}".format(knn_mnist_predictions_with_probabilities_sample))
