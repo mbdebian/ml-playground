@@ -15,6 +15,7 @@ import pandas
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
+from sklearn.neighbors import KNeighborsClassifier
 
 
 # Helper functions
@@ -62,14 +63,13 @@ print("---> Sample data - Titanic, #{} entries".format(len(sample_data_titanic))
 print("... Sample ...\n"
       "{}\n"
       "... END of Sample ...".format(sample_data_titanic[:5]))
-# Data fix (for numpy 'unique') - We know there is missing 'Embark' data that, when run through 'unique', is interpreted
-# as 'float', but 'Embark' is 'str', so we're gonna change that
+# Data fix (for numpy 'unique') - We know there is missing 'Embarked' data that, when run through 'unique', is
+# interpreted as 'float', but 'Embark' is 'str', so we're gonna change that
 sample_data_titanic['Embarked'].fillna("missing", inplace=True)
-
 # We make a 80/20% train/test split of the data
 data_train = sample_data_titanic[:int(0.8 * len(sample_data_titanic))]
 data_test = sample_data_titanic[int(0.8 * len(sample_data_titanic)):]
-
+# ---> Logistic Regression Model <---
 # ML training model
 ml_training_model = prepare_data(data_train)
 print("---> ML Training model\n"
@@ -78,24 +78,22 @@ print("---> ML Training model\n"
       "... END of SAMPLE".format(ml_training_model[:5]))
 model = LogisticRegression()
 model.fit(ml_training_model, data_train['Survived'])
-
 # Make predictions
 model_predictions_on_test_data = model.predict(prepare_data(data_test))
 print("[--- Logistic Regression ---]")
 print("---> Model predictions on test data:\n{}".format(model_predictions_on_test_data))
-
 # Compute the accuracy of the model on the test data
 model_score_on_test_data = model.score(prepare_data(data_test), data_test['Survived'])
 print("---> Model Accuracy on test data:\n{}".format(model_score_on_test_data))
 
-# Non-linear model with Support Vector Machines
+# ---> Non-linear model with Support Vector Machines <---
 print("[--- SVC ---]")
 model_svc = SVC()
 model_svc.fit(ml_training_model, data_train['Survived'])
 model_svc_score_on_test_data = model_svc.score(prepare_data(data_test), data_test['Survived'])
 print("---> Model Accuracy on test data:\n{}".format(model_svc_score_on_test_data))
 
-# Classification with multiple classes: hand-written digits
+# ---> Classification with multiple classes: hand-written digits <---
 mnist_dataset = pandas.read_csv("../book_code/data/mnist_small.csv")
 mnist_train = mnist_dataset[:int(0.8 * len(mnist_dataset))]
 mnist_test = mnist_dataset[int(0.8 * len(mnist_dataset))]
