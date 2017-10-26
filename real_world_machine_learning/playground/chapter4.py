@@ -12,8 +12,8 @@ Scratchpad / playground for the 4th chapter on the book
 """
 
 import time
+import pylab
 import random
-
 
 # Seed pseudo-random number generator
 random.seed(time.time())
