@@ -18,3 +18,5 @@ import random
 # Seed pseudo-random number generator
 random.seed(time.time())
 
+print("+++> Create a random 100x5 Matrix")
+features = pylab.rand(100, 5)
