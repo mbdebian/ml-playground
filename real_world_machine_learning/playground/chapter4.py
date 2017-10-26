@@ -8,5 +8,5 @@
 # 
 
 """
-Document your module here
+Scratchpad / playground for the 4th chapter on the book
 """
