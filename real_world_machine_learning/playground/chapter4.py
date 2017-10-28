@@ -38,3 +38,5 @@ idx = np.random.permutation(n)
 print("+++> Split the dataset (train / test)")
 idx_train = idx[:n_train]
 idx_test = idx[n_train:]
+# Break your data into training and testing subsets
+print("+++> Break your data into training and testing subsets")
