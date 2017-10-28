@@ -40,3 +40,7 @@ idx_train = idx[:n_train]
 idx_test = idx[n_train:]
 # Break your data into training and testing subsets
 print("+++> Break your data into training and testing subsets")
+features_train = features[idx_train,:]
+target_train = target[idx_train]
+features_test = features[idx_test,:]
+target_test = target[idx_test]
