@@ -24,3 +24,5 @@ print("+++> Create the prediction target")
 target = pylab.rand(100) > 0.5
 
 # First we're going to try the holdout method
+print("[{} Holdout Method {}]".format("-" * 20, "-" * 20))
+n = features.shape[0]
