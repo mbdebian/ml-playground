@@ -44,3 +44,6 @@ features_train = features[idx_train,:]
 target_train = target[idx_train]
 features_test = features[idx_test,:]
 target_test = target[idx_test]
+# Log the aspect of the data
+print("---> Train dataset shape")
+
