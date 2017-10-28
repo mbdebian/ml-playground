@@ -48,4 +48,4 @@ target_test = target[idx_test]
 print("---> Train dataset shape")
 print("---> Test dataset shape")
 print("---> Target data for the training dataset, shape")
-
+print("---> Target data for the test dataset, shape")
