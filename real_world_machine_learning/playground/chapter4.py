@@ -34,3 +34,5 @@ n_train = math.floor(0.7 * n)
 # datasets where you want to test on 'later' instances
 print("+++> Create a random permutation of the dataset")
 idx = np.random.permutation(n)
+# Split the index
+print("+++> Split the dataset (train / test)")
