@@ -22,3 +22,5 @@ print("+++> Create a random 100x5 Matrix")
 features = pylab.rand(100, 5)
 print("+++> Create the prediction target")
 target = pylab.rand(100) > 0.5
+
+# First we're going to try the holdout method
