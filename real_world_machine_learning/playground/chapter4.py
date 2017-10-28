@@ -11,6 +11,7 @@
 Scratchpad / playground for the 4th chapter on the book
 """
 
+import math
 import time
 import pylab
 import random
@@ -26,3 +27,4 @@ target = pylab.rand(100) > 0.5
 # First we're going to try the holdout method
 print("[{} Holdout Method {}]".format("-" * 20, "-" * 20))
 n = features.shape[0]
+n_train = math.floor(0.7 * n)
