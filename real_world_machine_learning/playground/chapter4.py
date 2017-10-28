@@ -46,6 +46,6 @@ features_test = features[idx_test,:]
 target_test = target[idx_test]
 # Log the aspect of the data
 print("---> Train dataset shape {}".format(features_train.shape))
-print("---> Test dataset shape {}")
+print("---> Test dataset shape {}".format(features_test.shape))
 print("---> Target data for the training dataset, shape {}")
 print("---> Target data for the test dataset, shape {}")
