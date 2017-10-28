@@ -36,3 +36,5 @@ print("+++> Create a random permutation of the dataset")
 idx = np.random.permutation(n)
 # Split the index
 print("+++> Split the dataset (train / test)")
+idx_train = idx[:n_train]
+idx_test = idx[n_train:]
