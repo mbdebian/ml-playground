@@ -32,4 +32,5 @@ n_train = math.floor(0.7 * n)
 # Randomize index
 # Note: sometimes you want to retain the order in the dataset and skip this step, e.g. in the case of time-based
 # datasets where you want to test on 'later' instances
+print("+++> Create a random permutation of the dataset")
 idx = np.random.permutation(n)
