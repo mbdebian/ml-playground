@@ -15,6 +15,7 @@ import math
 import time
 import pylab
 import random
+import numpy as np
 
 # Seed pseudo-random number generator
 random.seed(time.time())
@@ -28,3 +29,7 @@ target = pylab.rand(100) > 0.5
 print("[{} Holdout Method {}]".format("-" * 20, "-" * 20))
 n = features.shape[0]
 n_train = math.floor(0.7 * n)
+# Randomize index
+# Note: sometimes you want to retain the order in the dataset and skip this step, e.g. in the case of time-based
+# datasets where you want to test on 'later' instances
+idx = np.random.permutation(n)
