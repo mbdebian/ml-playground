@@ -51,3 +51,6 @@ print("---> Target data for the training dataset, shape {}".format(target_train.
 print("---> Target data for the test dataset, shape {}".format(target_test.shape))
 # ---- And... that was it, according to the example
 print("-" * 80)
+
+# K-fold cross-validation
+kfold_n = features.shape[0]
