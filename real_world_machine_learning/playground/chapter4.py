@@ -74,3 +74,5 @@ for idx in np.arange(k_folds):
     # Build and predict for CV fold (to be filled out)
     # model = train(features_train, target_train)
     # preds_kfold[folds == idx] = predict(model, features_test)
+# Measure model accuracy
+# accuracy = evaluate_acc(preds_kfold, target)
