@@ -53,4 +53,7 @@ print("---> Target data for the test dataset, shape {}".format(target_test.shape
 print("-" * 80)
 
 # K-fold cross-validation
-kfold_n = features.shape[0]
+# Number of items in the dataset
+n = features.shape[0]
+# Number of folds
+n_folds = 10
