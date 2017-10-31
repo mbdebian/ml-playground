@@ -62,4 +62,9 @@ preds_kfold = np.empty(n)
 folds = np.random.randint(0, k_folds, size=n)
 
 for idx in np.arange(k_folds):
-    pass
+    # For each fold, break your data into training and testing subsets
+    features_train = features[folds != idx,:]
+    target_train = target[folds != idx]
+    features_test = features[folds == idx,:]
+    target_test = target[folds == idx]
+    
