@@ -17,6 +17,10 @@ import pylab
 import random
 import numpy as np
 
+# Constants
+padding = 40
+total_padding = padding * 2
+
 # Seed pseudo-random number generator
 random.seed(time.time())
 
@@ -26,7 +30,7 @@ print("+++> Create the prediction target")
 target = pylab.rand(100) > 0.5
 
 # First we're going to try the holdout method
-print("[{} Holdout Method {}]".format("-" * 20, "-" * 20))
+print("[{} Holdout Method {}]".format("-" * padding, "-" * padding))
 n = features.shape[0]
 n_train = math.floor(0.7 * n)
 # Randomize index
@@ -50,7 +54,7 @@ print("---> Test dataset shape {}".format(features_test.shape))
 print("---> Target data for the training dataset, shape {}".format(target_train.shape))
 print("---> Target data for the test dataset, shape {}".format(target_test.shape))
 # ---- And... that was it, according to the example
-print("-" * 80)
+print("-" * total_padding)
 
 # K-fold cross-validation
 # Number of items in the dataset
@@ -76,8 +80,8 @@ for idx in np.arange(k_folds):
     # preds_kfold[folds == idx] = predict(model, features_test)
 # Measure model accuracy
 # accuracy = evaluate_acc(preds_kfold, target)
-print("[{} ============= {}]\n".format("-" * 20, "-" * 20))
+print("[{} ============= {}]\n".format("-" * padding, "-" * padding))
 
 # The ROC Curve
-print("[{} The ROC Curve {}]".format("-" * 20, "-" * 20))
-print("[{} ============= {}]\n".format("-" * 20, "-" * 20))
+print("[{} The ROC Curve {}]".format("-" * padding, "-" * padding))
+print("[{} ============= {}]\n".format("-" * padding, "-" * padding))
