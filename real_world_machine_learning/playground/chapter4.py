@@ -69,3 +69,7 @@ for idx in np.arange(k_folds):
     target_test = target[folds == idx]
     # Print the indices in each fold, for inspection
     print("Fold for index #{}: {}".format(idx, np.nonzero(folds == idx)[0]))
+    # This part is about the model
+    # Build and predict for CV fold (to be filled out)
+    # model = train(features_train, target_train)
+    # preds_kfold[folds == idx] = predict(model, features_test)
