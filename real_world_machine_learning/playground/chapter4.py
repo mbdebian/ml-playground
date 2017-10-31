@@ -57,3 +57,5 @@ print("-" * 80)
 n = features.shape[0]
 # Number of folds
 n_folds = 10
+# Un-initialized array with as many elements as elements in the dataset
+preds_kfold = np.empty(n)
