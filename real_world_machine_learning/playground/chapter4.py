@@ -56,6 +56,10 @@ print("-" * 80)
 # Number of items in the dataset
 n = features.shape[0]
 # Number of folds
-n_folds = 10
+k_folds = 10
 # Un-initialized array with as many elements as elements in the dataset
 preds_kfold = np.empty(n)
+folds = np.random.randint(0, k_folds, size=n)
+
+for idx in np.arange(k_folds):
+    pass
