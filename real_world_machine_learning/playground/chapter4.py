@@ -54,7 +54,7 @@ print("---> Test dataset shape {}".format(features_test.shape))
 print("---> Target data for the training dataset, shape {}".format(target_train.shape))
 print("---> Target data for the test dataset, shape {}".format(target_test.shape))
 # ---- And... that was it, according to the example
-print("-" * total_padding)
+#print("-" * total_padding)
 
 # K-fold cross-validation
 # Number of items in the dataset
