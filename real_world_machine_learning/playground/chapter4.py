@@ -67,4 +67,5 @@ for idx in np.arange(k_folds):
     target_train = target[folds != idx]
     features_test = features[folds == idx,:]
     target_test = target[folds == idx]
-    
+    # Print the indices in each fold, for inspection
+    print("Fold for index #{}: {}".format(idx, np.nonzero(folds == idx)[0]))
