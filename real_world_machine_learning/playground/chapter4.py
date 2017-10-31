@@ -76,8 +76,8 @@ for idx in np.arange(k_folds):
     # preds_kfold[folds == idx] = predict(model, features_test)
 # Measure model accuracy
 # accuracy = evaluate_acc(preds_kfold, target)
-print("[{} === {}]".format("-" * 20, "-" * 20))
+print("[{} ============= {}]".format("-" * 20, "-" * 20))
 
 # The ROC Curve
 print("[{} The ROC Curve {}]".format("-" * 20, "-" * 20))
-print("[{} === {}]".format("-" * 20, "-" * 20))
+print("[{} ============= {}]".format("-" * 20, "-" * 20))
