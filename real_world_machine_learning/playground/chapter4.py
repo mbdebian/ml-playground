@@ -127,6 +127,8 @@ print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Multi-class Classification
 print("[{} Multi-class Classification {}]".format("-" * padding, "-" * padding))
+print("+++> Load the MNIST dataset")
+mnist_dataset = pandas.read_csv("../book_code/data/mnist_small.csv")
 print("[{} ========================== {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
