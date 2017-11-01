@@ -24,6 +24,37 @@ total_padding = padding * 2
 # Seed pseudo-random number generator
 random.seed(time.time())
 
+
+# Helpers
+
+def roc_curve(true_labels, predicted_probs, n_points=100, pos_class=1):
+    # Initialization
+    # Reference line (this one is easy)
+    thr = pylab.linspace(0, 1, n_points)
+    # I guess this is about true possitive rate
+    tpr = pylab.zeros(n_points)
+    # I guess this is about the false possitive rate
+    fpr = pylab.zeros(n_points)
+    # What the fuck is this, why the sample code is so fucking obscure?
+    # Possitive and negative vectors?
+    pos = true_labels == pos_class
+    neg = np.logical_not(pos)
+    # Count possitives and negatives
+    n_pos = np.count_nonzero(pos)
+    n_neg = np.count_nonzero(neg)
+    # Calculate tpr and fpr for every position of the curve
+    for index, value in enumerate(thr):
+        tpr[index] = np.count_nonzero(np.logical_and(predicted_probs >= value, pos)) / n_pos
+        fpr[index] = np.count_nonzero(np.logical_and(predicted_probs >= value, neg)) / n_neg
+    return fpr, tpr, thr
+
+
+def area_under_the_curve(true_labels, predicted_labels, pos_class=1):
+    fpr, tpr, thr = roc_curve(true_labels, predicted_labels, pos_class=pos_class)
+    area = -pylab.trapz(tpr, x=fpr)
+    return area
+
+
 print("+++> Create a random 100x5 Matrix")
 features = pylab.rand(100, 5)
 print("+++> Create the prediction target")
@@ -84,44 +115,12 @@ print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
 
 # The ROC Curve
 print("[{} The ROC Curve {}]".format("-" * padding, "-" * padding))
-
-
-def roc_curve(true_labels, predicted_probs, n_points=100, pos_class=1):
-    # Initialization
-    # Reference line (this one is easy)
-    thr = pylab.linspace(0, 1, n_points)
-    # I guess this is about true possitive rate
-    tpr = pylab.zeros(n_points)
-    # I guess this is about the false possitive rate
-    fpr = pylab.zeros(n_points)
-    # What the fuck is this, why the sample code is so fucking obscure?
-    # Possitive and negative vectors?
-    pos = true_labels == pos_class
-    neg = np.logical_not(pos)
-    # Count possitives and negatives
-    n_pos = np.count_nonzero(pos)
-    n_neg = np.count_nonzero(neg)
-    # Calculate tpr and fpr for every position of the curve
-    for index, value in enumerate(thr):
-        tpr[index] = np.count_nonzero(np.logical_and(predicted_probs >= value, pos)) / n_pos
-        fpr[index] = np.count_nonzero(np.logical_and(predicted_probs >= value, neg)) / n_neg
-    return fpr, tpr, thr
-
-
 # Randomly generated predictions should give us a diagonal ROC curve
 preds = pylab.rand(len(target))
 fpr, tpr, thr = roc_curve(target, preds, pos_class=True)
 # pylab.plot(pylab.linspace(0, 1))
 pylab.plot(fpr, tpr)
-
-
 # Let's calculate the Area Under the Curve, for the ROC curve
-def area_under_the_curve(true_labels, predicted_labels, pos_class=1):
-    fpr, tpr, thr = roc_curve(true_labels, predicted_labels, pos_class=pos_class)
-    area = -pylab.trapz(tpr, x=fpr)
-    return area
-
-
 print("+++> Area Under the Curve: {}".format(area_under_the_curve(target, preds, pos_class=True)))
 print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
 
