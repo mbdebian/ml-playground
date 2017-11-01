@@ -44,9 +44,9 @@ idx_train = idx[:n_train]
 idx_test = idx[n_train:]
 # Break your data into training and testing subsets
 print("+++> Break your data into training and testing subsets")
-features_train = features[idx_train,:]
+features_train = features[idx_train, :]
 target_train = target[idx_train]
-features_test = features[idx_test,:]
+features_test = features[idx_test, :]
 target_test = target[idx_test]
 # Log the aspect of the data
 print("---> Train dataset shape {}".format(features_train.shape))
@@ -54,7 +54,7 @@ print("---> Test dataset shape {}".format(features_test.shape))
 print("---> Target data for the training dataset, shape {}".format(target_train.shape))
 print("---> Target data for the test dataset, shape {}".format(target_test.shape))
 # ---- And... that was it, according to the example
-#print("-" * total_padding)
+# print("-" * total_padding)
 
 # K-fold cross-validation
 # Number of items in the dataset
@@ -67,9 +67,9 @@ folds = np.random.randint(0, k_folds, size=n)
 
 for idx in np.arange(k_folds):
     # For each fold, break your data into training and testing subsets
-    features_train = features[folds != idx,:]
+    features_train = features[folds != idx, :]
     target_train = target[folds != idx]
-    features_test = features[folds == idx,:]
+    features_test = features[folds == idx, :]
     # I don't really need to compute the target_test, I can do it on the fly later
     target_test = target[folds == idx]
     # Print the indices in each fold, for inspection
@@ -84,4 +84,10 @@ print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
 
 # The ROC Curve
 print("[{} The ROC Curve {}]".format("-" * padding, "-" * padding))
+
+
+def roc_curve(true_labels, predicted_probe, n_points=100, pos_class=1):
+    pass
+
+
 print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
