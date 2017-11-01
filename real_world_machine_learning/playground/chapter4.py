@@ -111,8 +111,14 @@ def roc_curve(true_labels, predicted_probs, n_points=100, pos_class=1):
 # Randomly generated predictions should give us a diagonal ROC curve
 preds = pylab.rand(len(target))
 fpr, tpr, thr = roc_curve(target, preds, pos_class=True)
-#pylab.plot(pylab.linspace(0, 1))
+# pylab.plot(pylab.linspace(0, 1))
 pylab.plot(fpr, tpr)
+
+
+# Let's calculate the Area Under the Curve, for the ROC curve
+def area_under_the_curve(true_labels, predicted_labels, pos_class=1):
+    pass
+
 
 print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
 
