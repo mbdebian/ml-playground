@@ -94,6 +94,8 @@ def roc_curve(true_labels, predicted_probe, n_points=100, pos_class=1):
     tpr = pylab.zeros(n_points)
     # I guess this is about the false possitive rate
     fpr = pylab.zeros(n_points)
+    # What the fuck is this, why the sample code is so fucking obscure?
+    pos = true_labels == pos_class
 
 
 
