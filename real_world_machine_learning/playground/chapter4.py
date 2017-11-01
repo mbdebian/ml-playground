@@ -111,6 +111,7 @@ def roc_curve(true_labels, predicted_probs, n_points=100, pos_class=1):
 # Randomly generated predictions should give us a diagonal ROC curve
 preds = pylab.rand(len(target))
 fpr, tpr, thr = roc_curve(target, preds, pos_class=True)
+pylab.plot(pylab.linspace(0, 1))
 pylab.plot(fpr, tpr)
 
 print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
