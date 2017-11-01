@@ -122,6 +122,7 @@ def area_under_the_curve(true_labels, predicted_labels, pos_class=1):
     return area
 
 
+print("+++> Area Under the Curve: {}".format(area_under_the_curve(target, preds, pos_class=True)))
 print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
