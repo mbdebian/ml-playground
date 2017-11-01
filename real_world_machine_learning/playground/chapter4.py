@@ -117,7 +117,9 @@ pylab.plot(fpr, tpr)
 
 # Let's calculate the Area Under the Curve, for the ROC curve
 def area_under_the_curve(true_labels, predicted_labels, pos_class=1):
-    pass
+    fpr, tpr, thr = roc_curve(true_labels, predicted_labels, pos_class=pos_class)
+    area = -pylab.trapz(tpr, x=fpr)
+    return area
 
 
 print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
