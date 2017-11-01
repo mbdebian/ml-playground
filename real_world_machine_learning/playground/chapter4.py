@@ -14,6 +14,7 @@ Scratchpad / playground for the 4th chapter on the book
 import math
 import time
 import pylab
+import pandas
 import random
 import numpy as np
 
@@ -123,6 +124,10 @@ pylab.plot(fpr, tpr)
 # Let's calculate the Area Under the Curve, for the ROC curve
 print("+++> Area Under the Curve: {}".format(area_under_the_curve(target, preds, pos_class=True)))
 print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
+
+# Multi-class Classification
+print("[{} Multi-class Classification {}]".format("-" * padding, "-" * padding))
+print("[{} ========================== {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
 pylab.show()
