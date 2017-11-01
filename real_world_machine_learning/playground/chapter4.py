@@ -98,6 +98,10 @@ def roc_curve(true_labels, predicted_probe, n_points=100, pos_class=1):
     # Possitive and negative vectors?
     pos = true_labels == pos_class
     neg = np.logical_not(pos)
+    # Count possitives and negatives
+    n_pos = np.count_nonzero(pos)
+    n_neg = np.count_nonzero(neg)
+    
 
 
 
