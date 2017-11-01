@@ -90,6 +90,7 @@ def roc_curve(true_labels, predicted_probe, n_points=100, pos_class=1):
     # Initialization
     # Reference line (this one is easy)
     thr = pylab.linspace(0, 1, n_points)
+    # I guess this is about true possitive rate
     tpr = pylab.zeros(n_points)
     fpr = pylab.zeros(n_points)
 
