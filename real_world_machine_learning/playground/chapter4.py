@@ -86,7 +86,7 @@ print("[{} ============= {}]\n\n".format("-" * padding, "-" * padding))
 print("[{} The ROC Curve {}]".format("-" * padding, "-" * padding))
 
 
-def roc_curve(true_labels, predicted_probe, n_points=100, pos_class=1):
+def roc_curve(true_labels, predicted_probs, n_points=100, pos_class=1):
     # Initialization
     # Reference line (this one is easy)
     thr = pylab.linspace(0, 1, n_points)
@@ -101,7 +101,10 @@ def roc_curve(true_labels, predicted_probe, n_points=100, pos_class=1):
     # Count possitives and negatives
     n_pos = np.count_nonzero(pos)
     n_neg = np.count_nonzero(neg)
-    
+    # Calculate tpr and fpr for every position of the curve
+    for index, value in enumerate(thr):
+        tpr[index] = np.count_nonzero(np.logical_and(predicted_probs >= value, pos)) / n_pos
+        fpr[index] = np.count_nonzero(np.logical_and(predicted_probs >= value, neg)) / n_neg
 
 
 
