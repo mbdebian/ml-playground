@@ -105,6 +105,7 @@ def roc_curve(true_labels, predicted_probs, n_points=100, pos_class=1):
     for index, value in enumerate(thr):
         tpr[index] = np.count_nonzero(np.logical_and(predicted_probs >= value, pos)) / n_pos
         fpr[index] = np.count_nonzero(np.logical_and(predicted_probs >= value, neg)) / n_neg
+    return fpr, tpr, thr
 
 
 
