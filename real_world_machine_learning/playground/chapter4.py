@@ -17,6 +17,7 @@ import pylab
 import pandas
 import random
 import numpy as np
+from sklearn.ensemble import RandomForestClassifier
 
 # Constants
 padding = 40
@@ -130,6 +131,7 @@ print("[{} Multi-class Classification {}]".format("-" * padding, "-" * padding))
 print("+++> Load the MNIST dataset")
 mnist_dataset = pandas.read_csv("../book_code/data/mnist_small.csv")
 # Hold-out method
+print("+++> Holdout method for the dataset")
 mnist_dataset_train = mnist_dataset[:int(0.8 * len(mnist_dataset))]
 mnist_dataset_test = mnist_dataset[int(0.8 * len(mnist_dataset)):]
 print("[{} ========================== {}]\n\n".format("-" * padding, "-" * padding))
