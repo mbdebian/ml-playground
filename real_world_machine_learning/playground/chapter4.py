@@ -134,6 +134,8 @@ mnist_dataset = pandas.read_csv("../book_code/data/mnist_small.csv")
 print("+++> Holdout method for the dataset")
 mnist_dataset_train = mnist_dataset[:int(0.8 * len(mnist_dataset))]
 mnist_dataset_test = mnist_dataset[int(0.8 * len(mnist_dataset)):]
+randomforest_classifier = RandomForestClassifier()
+randomforest_classifier.fit(mnist_dataset_train.drop('label', axis=1), mnist_dataset_train['label'])
 print("[{} ========================== {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
