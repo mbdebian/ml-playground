@@ -141,6 +141,7 @@ randomforest_classifier.fit(mnist_dataset_train.drop('label', axis=1), mnist_dat
 print("+++> Calculate the model predictions on the test holdout")
 randomforest_classifier_predictions = randomforest_classifier.predict(mnist_dataset_test.drop('label', axis=1))
 print("---> Sample predictions: {}".format(randomforest_classifier_predictions[:10]))
+print("+++> Compute the Confusion Matrix")
 randomforest_mnist_confusion_matrix = confusion_matrix(mnist_dataset_test['label'], randomforest_classifier_predictions)
 pylab.matshow(randomforest_mnist_confusion_matrix, cmap='Greys')
 pylab.colorbar()
