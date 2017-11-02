@@ -144,7 +144,7 @@ print("---> Sample predictions: {}".format(randomforest_classifier_predictions[:
 randomforest_mnist_confusion_matrix = confusion_matrix(mnist_dataset_test['label'], randomforest_classifier_predictions)
 pylab.matshow(randomforest_mnist_confusion_matrix, cmap='Greys')
 pylab.colorbar()
-savefig("figures/figure-4.19.eps", format='eps')
+pylab.savefig("figures/figure-4.19.eps", format='eps')
 print("[{} ========================== {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
