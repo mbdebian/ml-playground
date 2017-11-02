@@ -159,7 +159,7 @@ print("[{} ========================== {}]\n\n".format("-" * padding, "-" * paddi
 # Root Mean Square Error
 print("[{} Root Mean Square Error (RMSE) {}]".format("-" * padding, "-" * padding))
 print("+++> Sample use of RMSE for random values and predictions, {}"
-      .format(root_mean_square_error(np.rand(10), np.rand(10))))
+      .format(root_mean_square_error(pylab.rand(10), pylab.rand(10))))
 print("[{} ============================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
