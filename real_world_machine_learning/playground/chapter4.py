@@ -58,6 +58,10 @@ def area_under_the_curve(true_labels, predicted_labels, pos_class=1):
     return area
 
 
+def root_mean_square_error(true_values, predicted_values):
+    pass
+
+
 print("+++> Create a random 100x5 Matrix")
 features = pylab.rand(100, 5)
 print("+++> Create the prediction target")
