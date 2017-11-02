@@ -18,6 +18,7 @@ import pandas
 import random
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import confusion_matrix
 
 # Constants
 padding = 40
@@ -134,8 +135,12 @@ mnist_dataset = pandas.read_csv("../book_code/data/mnist_small.csv")
 print("+++> Holdout method for the dataset")
 mnist_dataset_train = mnist_dataset[:int(0.8 * len(mnist_dataset))]
 mnist_dataset_test = mnist_dataset[int(0.8 * len(mnist_dataset)):]
+print("+++> Fit a Random Forest Classifier")
 randomforest_classifier = RandomForestClassifier()
 randomforest_classifier.fit(mnist_dataset_train.drop('label', axis=1), mnist_dataset_train['label'])
+print("+++> Calculate the model predictions on the test holdout")
+randomforest_classifier_predictions = randomforest_classifier.predict(mnist_dataset_test.drop('label', axis=1))
+
 print("[{} ========================== {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
