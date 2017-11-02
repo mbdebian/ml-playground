@@ -140,7 +140,7 @@ randomforest_classifier = RandomForestClassifier()
 randomforest_classifier.fit(mnist_dataset_train.drop('label', axis=1), mnist_dataset_train['label'])
 print("+++> Calculate the model predictions on the test holdout")
 randomforest_classifier_predictions = randomforest_classifier.predict(mnist_dataset_test.drop('label', axis=1))
-
+print("---> Sample predictions: {}".format(randomforest_classifier_predictions[:10]))
 print("[{} ========================== {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
