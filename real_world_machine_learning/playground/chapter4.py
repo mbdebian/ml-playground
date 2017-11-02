@@ -156,5 +156,9 @@ pylab.colorbar()
 pylab.savefig("figures/figure-4.19.eps", format='eps')
 print("[{} ========================== {}]\n\n".format("-" * padding, "-" * padding))
 
+# Root Mean Square Error
+print("[{} Root Mean Square Error {}]".format("-" * padding, "-" * padding))
+print("[{} ====================== {}]\n\n".format("-" * padding, "-" * padding))
+
 # Show all plots
 pylab.show()
