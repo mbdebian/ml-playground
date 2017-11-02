@@ -66,6 +66,17 @@ def root_mean_square_error(true_values, predicted_values):
     return np.sqrt(residuals / n)
 
 
+def r_square_error(true_values, predicted_values):
+    n = len(true_values)
+    mean = np.mean(true_values)
+    residuals = 0
+    total = 0
+    for i in range(n):
+        residuals += (true_values[i] - predicted_values[i]) ** 2
+        total += (true_values[i] - mean) ** 2
+    return 1.0 - (residuals / total)
+
+
 print("+++> Create a random 100x5 Matrix")
 features = pylab.rand(100, 5)
 print("+++> Create the prediction target")
