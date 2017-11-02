@@ -59,7 +59,11 @@ def area_under_the_curve(true_labels, predicted_labels, pos_class=1):
 
 
 def root_mean_square_error(true_values, predicted_values):
-    pass
+    n = len(true_values)
+    residuals = 0
+    for i in range(n):
+        residuals += (true_values[i] - predicted_values[i]) ** 2
+    return np.sqrt(residuals / n)
 
 
 print("+++> Create a random 100x5 Matrix")
