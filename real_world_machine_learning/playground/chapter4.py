@@ -157,8 +157,10 @@ pylab.savefig("figures/figure-4.19.eps", format='eps')
 print("[{} ========================== {}]\n\n".format("-" * padding, "-" * padding))
 
 # Root Mean Square Error
-print("[{} Root Mean Square Error {}]".format("-" * padding, "-" * padding))
-print("[{} ====================== {}]\n\n".format("-" * padding, "-" * padding))
+print("[{} Root Mean Square Error (RMSE) {}]".format("-" * padding, "-" * padding))
+print("+++> Sample use of RMSE for random values and predictions, {}"
+      .format(root_mean_square_error(np.rand(10), np.rand(10))))
+print("[{} ============================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
 pylab.show()
