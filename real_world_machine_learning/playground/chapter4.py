@@ -173,5 +173,11 @@ print("+++> Sample use of RMSE for random values and predictions, {}"
       .format(root_mean_square_error(pylab.rand(10), pylab.rand(10))))
 print("[{} ============================= {}]\n\n".format("-" * padding, "-" * padding))
 
+# R-Square Error
+print("[{} R-Square Error (RSE) {}]".format("-" * padding, "-" * padding))
+print("+++> Sample use of RSE for random values and predictions, {}"
+      .format(r_square_error(np.arange(10) + pylab.rand(), np.arange(10) + pylab.rand())))
+print("[{} ============================= {}]\n\n".format("-" * padding, "-" * padding))
+
 # Show all plots
 pylab.show()
