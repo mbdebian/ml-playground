@@ -202,6 +202,7 @@ print("+++> Categorical to numerical conversion of 'Sex' feature")
 x['Sex'] = map(lambda item: 1 if item == 'male' else 0, x['Sex'])
 print("+++> Categorical to numerical conversion of 'Embarked' feature")
 x.join(cat_to_num(titanic_dataset['Embarked']))
+print("---> Sample input data after being prepared for training\n{}".format(x[:5]))
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
