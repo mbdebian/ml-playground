@@ -206,6 +206,10 @@ x = x.join(cat_to_num(titanic_dataset['Sex']))
 print("+++> Categorical to numerical conversion of 'Embarked' feature")
 x = x.join(cat_to_num(titanic_dataset['Embarked']))
 print("---> Sample input data after being prepared for training\n{}".format(x[:5]))
+print("+++> Compute the 'Gamma' and 'Cost' vectors")
+gamma_vector, cost_vector = np.meshgrid(np.linspace(0.01, 10, 11), np.linspace(0.01, 10, 11))
+print("+++> Performing Grid Search to find the optimal hyper-parameters")
+
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
