@@ -179,5 +179,8 @@ print("+++> Sample use of RSE for random values and predictions, {}"
       .format(r_square_error(np.arange(10) + pylab.rand(), np.arange(10) + pylab.rand())))
 print("[{} ============================= {}]\n\n".format("-" * padding, "-" * padding))
 
+# Grid search with Kernel-SVM model
+
+
 # Show all plots
 pylab.show()
