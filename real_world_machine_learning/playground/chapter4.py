@@ -17,8 +17,9 @@ import pylab
 import pandas
 import random
 import numpy as np
+from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, roc_auc_score
 
 # Constants
 padding = 40
@@ -182,7 +183,6 @@ print("[{} ============================= {}]\n\n".format("-" * padding, "-" * pa
 # Grid search with Kernel-SVM model
 print("[{} Grid Search with Kernel-SVM Model {}]".format("-" * padding, "-" * padding))
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
-
 
 # Show all plots
 pylab.show()
