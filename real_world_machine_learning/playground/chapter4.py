@@ -182,6 +182,8 @@ print("[{} ============================= {}]\n\n".format("-" * padding, "-" * pa
 
 # Grid search with Kernel-SVM model
 print("[{} Grid Search with Kernel-SVM Model {}]".format("-" * padding, "-" * padding))
+print("+++> Load the Titanic dataset")
+titanic_dataset = pandas.read_csv("../book_code/data/titanic.csv")
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
