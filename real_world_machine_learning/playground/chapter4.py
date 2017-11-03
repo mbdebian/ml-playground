@@ -184,6 +184,8 @@ print("[{} ============================= {}]\n\n".format("-" * padding, "-" * pa
 print("[{} Grid Search with Kernel-SVM Model {}]".format("-" * padding, "-" * padding))
 print("+++> Load the Titanic dataset")
 titanic_dataset = pandas.read_csv("../book_code/data/titanic.csv")
+y = titanic_dataset['Survived']
+
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
