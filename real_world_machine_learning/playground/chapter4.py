@@ -186,7 +186,8 @@ print("+++> Load the Titanic dataset")
 titanic_dataset = pandas.read_csv("../book_code/data/titanic.csv")
 print("+++> Separate the target true values")
 y = titanic_dataset['Survived']
-
+print("+++> Compute the input features")
+x = titanic_dataset.drop(["Survived", "PassengerId", "Cabin","Ticket","Name", "Fare"], axis=1)
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
