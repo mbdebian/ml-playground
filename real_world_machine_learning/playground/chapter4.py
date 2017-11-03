@@ -180,6 +180,8 @@ print("+++> Sample use of RSE for random values and predictions, {}"
 print("[{} ============================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Grid search with Kernel-SVM model
+print("[{} Grid Search with Kernel-SVM Model {}]".format("-" * padding, "-" * padding))
+print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 
 # Show all plots
