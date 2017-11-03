@@ -200,6 +200,7 @@ print("+++> Compute the input features")
 x = titanic_dataset.drop(["Survived", "PassengerId", "Cabin", "Ticket", "Name", "Fare"], axis=1)
 print("+++> Categorical to numerical conversion of 'Sex' feature")
 x['Sex'] = map(lambda item: 1 if item == 'male' else 0, x['Sex'])
+print("+++> Categorical to numerical conversion of 'Embarked' feature")
 
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
