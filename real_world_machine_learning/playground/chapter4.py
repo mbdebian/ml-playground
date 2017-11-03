@@ -78,6 +78,16 @@ def r_square_error(true_values, predicted_values):
     return 1.0 - (residuals / total)
 
 
+# Categorical-to-numerical function from chapter 2 changed to automatically add column names
+def cat_to_num(data):
+    categories = np.unique(data)
+    features = {}
+    for cat in categories:
+        binary = (data == cat)
+        features["{}_{}".format(data.name, cat)] = binary.astype("int")
+    return pandas.DataFrame(features)
+
+
 print("+++> Create a random 100x5 Matrix")
 features = pylab.rand(100, 5)
 print("+++> Create the prediction target")
@@ -187,7 +197,7 @@ titanic_dataset = pandas.read_csv("../book_code/data/titanic.csv")
 print("+++> Separate the target true values")
 y = titanic_dataset['Survived']
 print("+++> Compute the input features")
-x = titanic_dataset.drop(["Survived", "PassengerId", "Cabin","Ticket","Name", "Fare"], axis=1)
+x = titanic_dataset.drop(["Survived", "PassengerId", "Cabin", "Ticket", "Name", "Fare"], axis=1)
 x['Sex'] = map(lambda item: 1 if item == 'male' else 0, x['Sex'])
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
