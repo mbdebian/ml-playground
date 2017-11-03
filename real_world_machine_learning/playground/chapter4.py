@@ -188,6 +188,7 @@ print("+++> Separate the target true values")
 y = titanic_dataset['Survived']
 print("+++> Compute the input features")
 x = titanic_dataset.drop(["Survived", "PassengerId", "Cabin","Ticket","Name", "Fare"], axis=1)
+x['Sex'] = map(lambda item: 1 if item == 'male' else 0, x['Sex'])
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
