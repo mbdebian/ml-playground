@@ -220,6 +220,9 @@ print("+++> Performing Grid Search to find the optimal hyper-parameters")
 for param_ind in np.arange(len(gamma_vector.ravel())):
     # Initialize cross-validation predictions
     y_cv_pred = np.empty(n)
+    # Loop through the cross-validation folds
+    for ii in np.arange(k):
+        pass
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
