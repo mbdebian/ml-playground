@@ -239,6 +239,9 @@ for param_ind in np.arange(len(gamma_vector.ravel())):
 indmax = np.argmax(auc_all)
 print("---> Maximum AUC = {}".format(np.max(auc_all)))
 print("---> Tuning Parameters: (gamma = {}, C = {})".format(gamma_vector.ravel()[indmax], cost_vector.ravel()[indmax]))
+print("+++> Plotting the contours of the parameter performance")
+# Reshape auc_all into a grid like gamma_vector
+auc_grid = np.array(auc_all).reshape(gamma_vector.shape)
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
