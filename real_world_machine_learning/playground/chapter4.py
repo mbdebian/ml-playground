@@ -236,6 +236,7 @@ for param_ind in np.arange(len(gamma_vector.ravel())):
 # Calculate the maximum AUC
 indmax = np.argmax(auc_all)
 print("---> Maximum AUC = {}".format(np.max(auc_all)))
+print("---> Tuning Parameters: (gamma = {}, C = {})".format(gamma_vector.ravel()[indmax], cost_vector.ravel()[indmax]))
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
