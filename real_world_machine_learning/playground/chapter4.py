@@ -216,7 +216,10 @@ n = len(y)
 k = 10
 folds = np.random.randint(0, k, size=n)
 print("+++> Performing Grid Search to find the optimal hyper-parameters")
-
+# Search over every value of the grid
+for param_ind in np.arange(len(gamma_vector.ravel())):
+    # Initialize cross-validation predictions
+    y_cv_pred = np.empty(n)
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
