@@ -226,7 +226,9 @@ for param_ind in np.arange(len(gamma_vector.ravel())):
         x_train = x.ix[folds != ii,:]
         y_train = y.ix[folds != ii,:]
         x_test = x.ix[folds == ii,:]
-        
+        # Build a model on the training set
+        model = SVC(gamma=gamma_vector.ravel()[param_ind], C=cost_vector.ravel()[param_ind])
+        model.fit(x_train, y_train)
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
