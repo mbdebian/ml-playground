@@ -233,6 +233,9 @@ for param_ind in np.arange(len(gamma_vector.ravel())):
         y_cv_pred[folds == ii] = model.predict(x_test)
     # Evaluate AUC for the predictions
     auc_all.append(roc_auc_score(y, y_cv_pred))
+# Calculate the maximum AUC
+indmax = np.argmax(auc_all)
+print("---> Maximum AUC = {}".format(np.max(auc_all)))
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
