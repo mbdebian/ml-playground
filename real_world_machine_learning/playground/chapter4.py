@@ -229,6 +229,9 @@ for param_ind in np.arange(len(gamma_vector.ravel())):
         # Build a model on the training set
         model = SVC(gamma=gamma_vector.ravel()[param_ind], C=cost_vector.ravel()[param_ind])
         model.fit(x_train, y_train)
+        # Generate and store model predictions on the testing set
+        y_cv_pred[folds == ii] = model.predict(x_test)
+        
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
