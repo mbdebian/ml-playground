@@ -231,7 +231,8 @@ for param_ind in np.arange(len(gamma_vector.ravel())):
         model.fit(x_train, y_train)
         # Generate and store model predictions on the testing set
         y_cv_pred[folds == ii] = model.predict(x_test)
-        
+    # Evaluate AUC for the predictions
+    auc_all.append(roc_auc_score(y, y_cv_pred))
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
