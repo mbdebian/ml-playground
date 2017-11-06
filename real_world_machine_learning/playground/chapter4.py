@@ -242,6 +242,7 @@ print("---> Tuning Parameters: (gamma = {}, C = {})".format(gamma_vector.ravel()
 print("+++> Plotting the contours of the parameter performance")
 # Reshape auc_all into a grid like gamma_vector
 auc_grid = np.array(auc_all).reshape(gamma_vector.shape)
+print("---> Sample auc_grid - {}".format(auc_grid[:5]))
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
