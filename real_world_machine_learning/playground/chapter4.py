@@ -243,6 +243,11 @@ print("+++> Plotting the contours of the parameter performance")
 # Reshape auc_all into a grid like gamma_vector
 auc_grid = np.array(auc_all).reshape(gamma_vector.shape)
 print("---> Sample auc_grid - {}".format(auc_grid[:5]))
+pylab.contourf(gamma_vector, cost_vector, auc_grid, 20, cmap='Greys')
+pylab.xlabel("Kernel Coefficient, gamma")
+pylab.ylabel("Penalty Parameter, C")
+pylab.colorbar()
+pylab.savefig("figures/figure-4.25.eps", format="eps")
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
