@@ -224,7 +224,7 @@ for param_ind in np.arange(len(gamma_vector.ravel())):
     for ii in np.arange(k):
         # Break your data into training and testing sets
         x_train = x.ix[folds != ii, :]
-        y_train = y.ix[folds != ii, :]
+        y_train = y.ix[folds != ii]
         x_test = x.ix[folds == ii, :]
         # Build a model on the training set
         model = SVC(gamma=gamma_vector.ravel()[param_ind], C=cost_vector.ravel()[param_ind])
