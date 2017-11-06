@@ -222,7 +222,11 @@ for param_ind in np.arange(len(gamma_vector.ravel())):
     y_cv_pred = np.empty(n)
     # Loop through the cross-validation folds
     for ii in np.arange(k):
-        pass
+        # Break your data into training and testing sets
+        x_train = x.ix[folds != ii,:]
+        y_train = y.ix[folds != ii,:]
+        x_test = x.ix[folds == ii,:]
+        
 print("[{} ================================= {}]\n\n".format("-" * padding, "-" * padding))
 
 # Show all plots
