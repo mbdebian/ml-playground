@@ -8,5 +8,5 @@
 # 
 
 """
-Document your module here
+First chapter on the practical sessions
 """
