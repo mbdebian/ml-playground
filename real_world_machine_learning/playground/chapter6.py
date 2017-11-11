@@ -8,5 +8,7 @@
 # 
 
 """
-First chapter on the practical sessions
+First chapter on the practical sessions.
+
+From the book chapter 6 to 9
 """
