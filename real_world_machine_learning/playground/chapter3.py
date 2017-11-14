@@ -158,6 +158,8 @@ random_forest_regressor.fit(auto_train.drop('mpg', axis=1), auto_train['mpg'])
 print("+++> Compute predictions with the random forest regressor")
 random_forest_regressor_predictions = random_forest_regressor.predict(auto_test.drop('mpg', axis=1))
 print("---> Random Forest regressor predictions sample\n{}".format(random_forest_regressor_predictions[:10]))
+print("---> Random Fores accuracy: {}"
+      .format(random_forest_regressor.score(auto_test.drop('mpg', axis=1), auto_test.mpg)))
 pylab.figure()
 pylab.plot(auto_test.mpg, random_forest_regressor_predictions, 'o')
 x = pylab.linspace(10, 40, 5)
