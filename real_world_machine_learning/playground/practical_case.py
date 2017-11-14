@@ -8,5 +8,5 @@
 # 
 
 """
-Document your module here
+This is the playground for the practical part of the book
 """
