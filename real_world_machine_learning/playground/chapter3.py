@@ -11,12 +11,12 @@
 Scratchpad for the chapter 3 from the book
 """
 
+import pylab
 import pandas
 import numpy as np
-import pylab
 from sklearn.svm import SVC
-from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression, LinearRegression
 
 
