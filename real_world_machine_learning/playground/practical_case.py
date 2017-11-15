@@ -10,3 +10,6 @@
 """
 This is the playground for the practical part of the book
 """
+
+if __name__ == "__main__":
+    pass
