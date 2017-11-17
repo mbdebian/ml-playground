@@ -167,4 +167,3 @@ pylab.plot(x, x, '-')
 # Show all plots
 pylab.show()
 
-

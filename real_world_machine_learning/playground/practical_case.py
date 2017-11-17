@@ -10,3 +10,5 @@
 """
 This is the playground for the practical part of the book
 """
+
+import pylab
