@@ -14,3 +14,6 @@ This is the playground for the practical part of the book
 import pylab
 import numpy
 import pandas
+
+
+# TODO - This first part will work on TED Talks dataset
