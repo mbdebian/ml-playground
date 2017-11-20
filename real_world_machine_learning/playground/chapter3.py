@@ -167,3 +167,5 @@ pylab.plot(x, x, '-')
 # Show all plots
 pylab.show()
 
+print("<{} END {}>".format("-" * 20, "-" * 20))
+
