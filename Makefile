@@ -18,6 +18,6 @@ clean:
 
 update_requirements_file:
 	@#$(PYTHON_HOME)/bin/pipreqs --use-local --savepath $(REQUIREMENTS_FILE) $(PWD)
-	@python_install/bin/pip freeze > requirements.txt
+	@python/bin/pip freeze > requirements.txt
 
 .PHONY: install install_requirements update_requirements_file clean
