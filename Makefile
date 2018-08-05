@@ -20,4 +20,7 @@ update_requirements_file:
 	@#$(PYTHON_HOME)/bin/pipreqs --use-local --savepath $(REQUIREMENTS_FILE) $(PWD)
 	@python/bin/pip freeze > requirements.txt
 
-.PHONY: install install_requirements update_requirements_file clean
+upgrade_dependencies:
+	@python/bin/pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 python/bin/pip install -U
+
+.PHONY: install install_requirements update_requirements_file clean upgrade_dependencies
