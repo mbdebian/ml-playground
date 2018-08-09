@@ -2,3 +2,6 @@
 	path = real_world_machine_learning/book_code
 	url = https://github.com/brinkar/real-world-machine-learning.git
 	branch = master
+[submodule "pmachine_learning_in_7_days/seaborn-data"]
+	path = pmachine_learning_in_7_days/seaborn-data
+	url = https://github.com/mwaskom/seaborn-data.git
