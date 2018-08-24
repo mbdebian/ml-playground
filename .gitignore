@@ -105,3 +105,7 @@ python
 
 # Ignore PyCharm IDE data
 .idea
+
+# Custom
+!pmachine_learning_in_7_days/datasets/empty
+pmachine_learning_in_7_days/datasets/**
